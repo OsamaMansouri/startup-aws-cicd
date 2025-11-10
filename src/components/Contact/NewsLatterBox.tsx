@@ -1,9 +1,18 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent hydration mismatch by using a default value until mounted
+  const currentTheme = mounted ? theme : "light";
 
   return (
     <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
@@ -27,11 +36,18 @@ const NewsLatterBox = () => {
           placeholder="Enter your email"
           className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
         />
-        <input
+        <button
           type="submit"
-          value="Subscribe"
-          className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark mb-5 flex w-full cursor-pointer items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300"
-        />
+          className="group relative mb-5 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-9 py-4 text-base font-semibold text-white shadow-lg shadow-primary/30 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/40 active:scale-[0.98]"
+        >
+          <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-primary/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+          <span className="relative z-10 flex items-center gap-2">
+            Subscribe
+            <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </span>
+        </button>
         <p className="text-body-color dark:text-body-color-dark text-center text-base leading-relaxed">
           No spam guaranteed, So please don’t send any spam mail.
         </p>
@@ -61,12 +77,12 @@ const NewsLatterBox = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0.62"
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -97,12 +113,12 @@ const NewsLatterBox = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0.62"
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -133,12 +149,12 @@ const NewsLatterBox = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0.62"
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -187,11 +203,11 @@ const NewsLatterBox = () => {
               >
                 <stop
                   offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -205,11 +221,11 @@ const NewsLatterBox = () => {
               >
                 <stop
                   offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -223,11 +239,11 @@ const NewsLatterBox = () => {
               >
                 <stop
                   offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -241,11 +257,11 @@ const NewsLatterBox = () => {
               >
                 <stop
                   offset="0.328125"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+                  stopColor={currentTheme === "light" ? "#046B8B" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>

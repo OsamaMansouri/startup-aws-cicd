@@ -3,44 +3,44 @@ import { Blog } from "@/types/blog";
 const blogData: Blog[] = [
   {
     id: 1,
-    title: "Best UI components for modern websites",
+    title: "The Future of AI in Business: Transforming Operations",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "Discover how artificial intelligence is revolutionizing business operations, from automation to predictive analytics, and how your company can leverage AI for competitive advantage.",
     image: "/images/blog/blog-01.jpg",
     author: {
-      name: "Samuyl Joshi",
+      name: "Alex Thompson",
       image: "/images/blog/author-03.png",
-      designation: "Graphic Designer",
+      designation: "AI Solutions Lead",
     },
-    tags: ["creative"],
+    tags: ["AI"],
     publishDate: "2025",
   },
   {
     id: 2,
-    title: "9 simple ways to improve your design skills",
+    title: "Building Scalable E-commerce Platforms: Best Practices",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "Learn the essential strategies and technologies needed to build robust, scalable e-commerce platforms that can grow with your business and handle increasing traffic.",
     image: "/images/blog/blog-02.jpg",
     author: {
-      name: "Musharof Chy",
+      name: "Maria Garcia",
       image: "/images/blog/author-02.png",
-      designation: "Content Writer",
+      designation: "E-commerce Specialist",
     },
-    tags: ["computer"],
+    tags: ["E-commerce"],
     publishDate: "2025",
   },
   {
     id: 3,
-    title: "Tips to quickly improve your coding speed.",
+    title: "SaaS Development: From Concept to Launch",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "A comprehensive guide to developing successful SaaS products, covering architecture, user experience, scalability, and go-to-market strategies.",
     image: "/images/blog/blog-03.jpg",
     author: {
-      name: "Lethium Deo",
+      name: "David Kim",
       image: "/images/blog/author-03.png",
-      designation: "Graphic Designer",
+      designation: "SaaS Architect",
     },
-    tags: ["design"],
+    tags: ["SaaS"],
     publishDate: "2025",
   },
 ];

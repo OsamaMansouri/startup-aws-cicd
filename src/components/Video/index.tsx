@@ -2,24 +2,60 @@
 
 import VideoModal from "@/components/video-modal";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 
 export default function Video() {
   const [isOpen, setOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
     <>
-      <section className="relative z-10 py-16 md:py-20 lg:py-28">
+      <section
+        ref={sectionRef}
+        className="relative z-10 py-16 md:py-20 lg:py-28"
+      >
         <div className="container">
-          <SectionTitle
-            title="We are ready to help"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
-            center
-            mb="80px"
-          />
+          <div
+            className={`transform transition-all duration-700 ease-out ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+          >
+            <SectionTitle
+              title="Ready to Transform Your Business?"
+              paragraph="Let's discuss how Incite can help you achieve your digital goals. Watch our story and discover why businesses trust us to deliver exceptional results."
+              center
+              mb="80px"
+            />
+          </div>
         </div>
-        <div className="relative overflow-hidden">
+        <div
+          className={`relative overflow-hidden transform transition-all duration-1000 ease-out delay-300 ${
+            isVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-10 opacity-0 scale-95"
+          }`}
+        >
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[770px] overflow-hidden rounded-md">

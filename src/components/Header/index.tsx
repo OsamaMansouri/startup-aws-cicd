@@ -63,18 +63,11 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="/images/logo/logo-2.svg"
-                  alt="logo"
+                  src="/images/logo.png"
+                  alt="Incite Digital Agency"
                   width={140}
-                  height={30}
-                  className="w-full dark:hidden"
-                />
-                <Image
-                  src="/images/logo/logo.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="hidden w-full dark:block"
+                  height={50}
+                  className="h-auto w-auto max-w-[180px]"
                 />
               </Link>
             </div>
@@ -166,16 +159,11 @@ const Header = () => {
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
                 <Link
-                  href="/signin"
-                  className="text-dark hidden px-7 py-3 text-base font-medium hover:opacity-70 md:block dark:text-white"
+                  href="/contact"
+                  className="group relative hidden items-center justify-center overflow-hidden rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white shadow-md shadow-primary/25 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-primary/35 active:scale-95 md:inline-flex lg:px-8 xl:px-9"
                 >
-                  Sign In
-                </Link>
-                <Link
-                  href="/signup"
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover bg-primary hover:bg-primary/90 hidden rounded-xs px-8 py-3 text-base font-medium text-white transition duration-300 md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-primary/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                  <span className="relative z-10">Get Started</span>
                 </Link>
                 <div>
                   <ThemeToggler />
