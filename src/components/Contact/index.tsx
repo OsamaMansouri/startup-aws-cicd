@@ -12,7 +12,7 @@ const Contact = () => {
               "
             >
               <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                Let's Start Your Project
+                Let&apos;s Start Your Project
               </h2>
               <p className="mb-12 text-base font-medium text-body-color">
                 Get in touch with our team to discuss how we can help transform your business with our digital solutions.
