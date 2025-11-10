@@ -21,6 +21,10 @@ const nextConfig = {
       },
     ],
   },
+  // Exclude API routes from static export
+  async generateBuildId() {
+    return "static-build";
+  },
 };
 
 module.exports = nextConfig;
