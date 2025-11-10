@@ -6,12 +6,19 @@ phases:
     commands:
       - echo Installing dependencies...
       - npm ci --legacy-peer-deps
+  pre_build:
+    commands:
+      - echo Build started on `date`
   build:
     commands:
       - echo Building the Next.js app...
       - npm run build
+      - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo Build phase completed
 artifacts:
   files:
     - "**/*"
-  base-directory: .next
+  base-directory: out
   discard-paths: no
